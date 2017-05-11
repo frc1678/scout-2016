@@ -109,7 +109,11 @@ public class MainActivity extends AppCompatActivity {
             editor.commit();
         }
         //scout initials
-        scoutName = getIntent().getStringExtra("scoutName");
+        if(getIntent().getStringExtra("scoutName")!=null){
+            scoutName = getIntent().getStringExtra("scoutName");
+        }else{
+            scoutName = "NO_NAME_ASSIGNED";
+        }
 
         //set up schedule
         schedule = new ScheduleHandler(this);
